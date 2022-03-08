@@ -1,4 +1,5 @@
 src
-README-md
+README.md
 media
 .github
+.gitignore
