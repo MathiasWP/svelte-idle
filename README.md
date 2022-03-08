@@ -3,7 +3,7 @@
 </p>
 
 <h2 align="center">
-Features | <a href="link-to-demo">Demo</a>
+Features | <a href="https://svelte.dev/repl/2e065d537d284be2adcb14dfe24cb3ca?version=3.46.4">Demo</a>
 </h2>
 
 <p align="center">
