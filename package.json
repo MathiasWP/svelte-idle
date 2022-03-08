@@ -1,0 +1,21 @@
+{
+  "name": "svelte-idle",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@tsconfig/svelte": "^3.0.0",
+    "svelte": "^3.46.4",
+    "tslib": "^2.3.1",
+    "typescript": "^4.0.0"
+  },
+  "files": [
+    "dist",
+    "types"
+  ],
+  "main": "dist/index.js",
+  "types": "types/index.d.ts"
+}
