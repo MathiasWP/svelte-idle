@@ -65,11 +65,15 @@ start({
 A readable store that reflects the current idle-state.
 
 ## onIdle
-Callback which will be fired everytime idle becomes true.
+Callback which will be fired everytime idle becomes true. Returns a method for clearing the listener.
 
 #### Example:
 ```ts
+import { onMoumt } from 'svelte'
 import { onIdle } from 'svelte-idle'
 
-onIdle(() => console.log('User is idle!'))
+onMount(() => {
+    const unsub = onIdle(() => console.log('User is idle!'))
+    return unsub
+})
 ```
