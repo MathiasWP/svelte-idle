@@ -55,8 +55,8 @@ const INTERESTING_EVENTS = [
 ]
 
 function watch() {
-    if(watchers > 0) return;
     watchers++;
+    if(watchers > 1) return;
 
     // keeping track of store value for easy access
     const unsubscribe = idle.subscribe(i => is_idle = i)
