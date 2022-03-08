@@ -55,7 +55,7 @@ The start method accepts an optional object (type: `StartOpts`). The following v
 - defines: how long before the user is udle
 
 ### throttle_milliseconds
-- type: `number``
+- type: `number`
 - defines: amount of milliseconds before each idle-check
 
 
