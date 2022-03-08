@@ -55,7 +55,6 @@ const INTERESTING_EVENTS = [
 ]
 
 function watch() {
-    
     if(watchers > 0) return;
     watchers++;
 
