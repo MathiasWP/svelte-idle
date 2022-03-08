@@ -2,23 +2,17 @@
     <img width="100%" src="./media/banner.png" />
 </p>
 
-<br />
-
 <h2 align="center">
 Features | <a href="link-to-demo">Demo</a>
 </h2>
 
 <p align="center">
-    SSR support &mdash; Readable store for idle value &mdash; `onIdle` callback
-<p align="center">
-
-<br/>
+    SSR support &mdash; Readable store for idle value &mdash; <code>onIdle</code> callback
+</p>
 
 <h2 align="center">
 Usage
 </h2>
-
-<br />
 
 ```svelte
 <script>
@@ -35,13 +29,11 @@ onIdle(() => {
 //... or by using the idle store
 $: {
     if($idle) console.log('User is idle')
-
 }
 </script>
 
 User is idle: {$idle}
 ```
-<br />
 
 <h2 align="center">
 API
