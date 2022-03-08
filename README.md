@@ -11,6 +11,14 @@ Features | <a href="https://svelte.dev/repl/2e065d537d284be2adcb14dfe24cb3ca?ver
 </p>
 
 <h2 align="center">
+Installation
+</h2>
+
+```bash
+npm i svelte-idle
+```
+
+<h2 align="center">
 Usage
 </h2>
 
