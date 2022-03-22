@@ -24,12 +24,12 @@ Usage
 
 ```svelte
 <script>
-import { start, idle, onIdle } from 'svelte-idle'
+import { listen, idle, onIdle } from 'svelte-idle'
 
-// Run start on component Initialization
-start()
+// Run listen on component initialization
+listen()
 
-// Run code when user idle via callback...
+// Run code when the user idle via a callback...
 onIdle(() => {
     console.log('User is idle')
 })
@@ -47,25 +47,26 @@ User is idle: {$idle}
 API
 </h2>
 
-## start
-The start method accepts an optional object (type: `StartOpts`). The following values can be defined:
+## listen
+The listen method accepts an optional object (type: `listenOpts`). The following values can be defined:
 
-### milliseconds
+### timer
 - type: `number`
-- defines: how long before the user is udle
+- defines: amount of milliseconds until idle is true
+- default: `60 000` (10 minutes)
 
-### throttle_milliseconds
+### cycle
 - type: `number`
 - defines: amount of milliseconds before each idle-check
-
+- default: `200`
 
 #### Example:
 ```ts
-import { start } from 'svelte-idle'
+import { listen } from 'svelte-idle'
 
-start({
-    milliseconds: 60_000,
-    throttle_milliseconds: 500
+listen({
+    timer: 60_000,
+    cycle: 500
 })
 ```
 

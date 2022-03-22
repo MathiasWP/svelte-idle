@@ -7,16 +7,16 @@ import type { Subscriber } from "svelte/store";
  */
 export let idle = readable(false, (set) => (update_store = set) && (() => set(false)));
 
-export type StartOpts = {
-    milliseconds?: number,
-    throttle_milliseconds?: number
+export type SveltIdleListenConfig = {
+    timer?: number,
+    cycle?: number
 }
 
-export function start(opts: StartOpts = {}) {
+export function listen(opts: SveltIdleListenConfig = {}) {
     if(!IS_BROWSER) return;
 
-    if(typeof opts.milliseconds === 'number' && opts.milliseconds > 0) idle_timeout_ms = opts.milliseconds;
-    if(typeof opts.throttle_milliseconds === 'number' && opts.throttle_milliseconds > 0) throttle_timeout_ms = opts.throttle_milliseconds;
+    if(typeof opts.timer === 'number' && opts.timer > 0) idle_timeout_ms = opts.timer;
+    if(typeof opts.cycle === 'number' && opts.cycle > 0) throttle_timeout_ms = opts.cycle;
 
     onMount(watch)
 }
