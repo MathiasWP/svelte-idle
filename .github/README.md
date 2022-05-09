@@ -15,7 +15,7 @@ Installation
 </h2>
 
 ```bash
-npm i svelte-idle
+npm i svelte-idle -D
 ```
 
 <h2 align="center">
