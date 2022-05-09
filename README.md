@@ -15,7 +15,7 @@ Installation
 </h2>
 
 ```bash
-npm i svelte-idle
+npm i svelte-idle -D
 ```
 
 <h2 align="center">
@@ -48,12 +48,12 @@ API
 </h2>
 
 ## listen
-The listen method accepts an optional object (type: `SveltIdleListenConfig`). The following values can be defined:
+The listen method accepts an optional object (type: `SvelteIdleListenConfig`). The following values can be defined:
 
 ### timer
 - type: `number`
 - defines: amount of milliseconds until idle is true
-- default: `60 000` (10 minutes)
+- default: `60_000` (10 minutes)
 
 ### cycle
 - type: `number`

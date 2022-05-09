@@ -7,12 +7,12 @@ import type { Subscriber } from "svelte/store";
  */
 export let idle = readable(false, (set) => (update_store = set) && (() => set(false)));
 
-export type SveltIdleListenConfig = {
+export type SvelteIdleListenConfig = {
     timer?: number,
     cycle?: number
 }
 
-export function listen(opts: SveltIdleListenConfig = {}) {
+export function listen(opts: SvelteIdleListenConfig = {}) {
     if(!IS_BROWSER) return;
 
     if(typeof opts.timer === 'number' && opts.timer > 0) idle_timeout_ms = opts.timer;
