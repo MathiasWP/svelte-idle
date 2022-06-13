@@ -41,7 +41,7 @@ let idle_countdown: /* Timeout */ any;
 let idle_timeout_ms = 1_000 * 60 * 10; // Default is 10 minutes
 let throttle_timeout_ms = 200;
 
-const IS_BROWSER = !!(window && document);
+const IS_BROWSER = typeof window !== 'undefined' && typeof document !== 'undefined';
 const INTERESTING_EVENTS = [
     "keypress",
     "keydown",
