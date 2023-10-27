@@ -78,7 +78,7 @@ Callback which will be fired everytime idle becomes true. Returns a method for c
 
 #### Example:
 ```ts
-import { onMoumt } from 'svelte'
+import { onMount } from 'svelte'
 import { onIdle } from 'svelte-idle'
 
 onMount(() => {
