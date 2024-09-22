@@ -12,6 +12,10 @@ export type SvelteIdleListenConfig = {
     cycle?: number
 }
 
+/**
+ * @description Starts the idle detection process
+ * @param opts Configuration options
+ */
 export function listen(opts: SvelteIdleListenConfig = {}) {
     if(!IS_BROWSER) return;
 
@@ -21,11 +25,40 @@ export function listen(opts: SvelteIdleListenConfig = {}) {
     onMount(watch)
 }
 
+/**
+ * @description Listener for when the user goes idle
+ * @param cb Callback that is fired when the user goes idle
+ * @returns Cleanup function to remove the callback
+ */
 export function onIdle(cb: () => any) {
     if(!IS_BROWSER) return;
 
     if(!idle_callbacks.has(cb)) idle_callbacks.add(cb)
     return () => idle_callbacks.delete(cb)
+}
+
+/**
+ * @description Updates the options for the next countdown. Will be used from the next countdown.
+ * @param opts Configuration options
+ */
+export function updateOptions(opts: SvelteIdleListenConfig) {
+    if(typeof opts.timer === 'number' && opts.timer > 0) idle_timeout_ms = opts.timer;
+    if(typeof opts.cycle === 'number' && opts.cycle > 0) throttle_timeout_ms = opts.cycle;
+}
+
+/**
+ * @description Completely stops the current countdown
+ */
+export function stopCountdown() {
+    clear_countdown()
+}
+
+/**
+ * @description Stops the current countdown and restarts it from the beginning
+ */
+export function restartCountdown() {
+    clear_countdown()
+    start_countdown()
 }
 
 /**

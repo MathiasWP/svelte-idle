@@ -86,3 +86,42 @@ onMount(() => {
     return unsub
 })
 ```
+
+## updateOptions
+Can be used if you want to update the current options set.
+
+## stopCountdown
+Completely stops the countdown.
+
+## restartCountdown
+Will stop the current countdown and restart it.
+
+#### Example
+```ts
+import { onMount } from 'svelte'
+import { listen, updateOptions, stopCountdown, restartCountdown } from 'svelte-idle'
+
+/**
+ * Timer is quote long
+ */
+listen({
+    timer: 100_000,
+    cycle: 500
+})
+
+/**
+ * Decrease the timer
+ */
+updateOptions({
+    timer: 10_000
+})
+
+/**
+ * Stop the countdown, we don't want to count down anymore
+ */
+stopCountdown()
+
+/**
+ * Restart the countdown, we want to count down again
+ */
+restartCountdown()
