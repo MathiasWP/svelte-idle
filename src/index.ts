@@ -121,6 +121,7 @@ function start_countdown() {
 }
 
 function clear_countdown() {
+    if(is_idle) update_store(false)
     if(idle_countdown) clearTimeout(idle_countdown)
 }
 
@@ -130,7 +131,6 @@ function start_throttle() {
 
 function detect_action() {
     if(is_throttling) return
-    if(is_idle) update_store(false)
 
     is_throttling = true;
 
